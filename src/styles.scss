@@ -1,7 +1,6 @@
 @use "@angular/material" as mat;
 @use "./styles/base/reset" as *;
 
-// Include Angular Material core styles and apply theme
 html {
   @include mat.core();
 
@@ -11,13 +10,11 @@ html {
         primary: mat.$azure-palette,
         tertiary: mat.$blue-palette,
       ),
-      typography: mat.define-typography-config(),
       density: 0,
     )
   );
 }
 
-// Body styling
 body {
   color-scheme: light;
   background-color: var(--mat-sys-surface);
@@ -26,7 +23,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-// Ensure full height layout
 html,
 body {
   height: 100%;
