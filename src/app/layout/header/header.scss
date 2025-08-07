@@ -1,0 +1,18 @@
+@use "../../../styles/tokens/breakpoints" as *;
+
+.header {
+  background-color: var(--mat-sys-primary);
+  box-shadow: 0 0.5rem 1rem var(--box-shadow);
+  position: sticky;
+  top: 0;
+  padding: 1rem 5rem;
+
+  @include is-mobile {
+    padding: 1rem;
+  }
+
+  h1 {
+    color: var(--mat-sys-surface);
+    cursor: pointer;
+  }
+}
