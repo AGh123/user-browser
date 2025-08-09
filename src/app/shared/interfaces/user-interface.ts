@@ -13,3 +13,7 @@ export interface PaginatedUserResponseInterface {
   total_pages: number;
   data: UserInterface[];
 }
+
+export interface SingleUserResponseInterface {
+  data: UserInterface;
+}

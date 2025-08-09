@@ -11,7 +11,8 @@ import {
   withFetch,
   withInterceptors,
 } from '@angular/common/http';
-import { authInterceptor } from './shared/interceptors/auth';
+import { authInterceptor } from './shared/interceptors/auth-interceptor';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,5 +21,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimationsAsync(),
     provideHttpClient(withFetch(), withInterceptors([authInterceptor])),
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'outline' },
+    },
   ],
 };
