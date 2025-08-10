@@ -3,7 +3,7 @@
   <mat-icon class="user-details__back" (click)="back()" matTooltip="Go back"
     >arrow_back</mat-icon
   >
-  @if (usersService.selectedUser()) {
+  @if (!usersService.loading()) { @if (usersService.selectedUser()) {
   <article class="user-details__card">
     <img
       class="user-details__avatar"
@@ -34,5 +34,5 @@
     <p>User not found.</p>
     <a routerLink="/users">Back to list</a>
   </div>
-  }
+  } }
 </section>
