@@ -6,6 +6,7 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { UserCard } from '../../shared/components/user-card/user-card';
 import { UsersService } from '../../shared/services/users-service';
+import { LoadingBar } from '../../shared/components/loading-bar/loading-bar';
 
 @Component({
   selector: 'app-users',
@@ -16,6 +17,7 @@ import { UsersService } from '../../shared/services/users-service';
     MatPaginatorModule,
     ReactiveFormsModule,
     UserCard,
+    LoadingBar,
   ],
   templateUrl: './users.html',
   styleUrl: './users.scss',

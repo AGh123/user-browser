@@ -1,0 +1,19 @@
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  z-index: 9999;
+  pointer-events: none;
+
+  &__inner {
+    height: 100%;
+    width: 100%;
+    transform-origin: 0 50%;
+    background: currentColor;
+    color: var(--color-secondary);
+    transition: transform 160ms ease-out;
+  }
+}
