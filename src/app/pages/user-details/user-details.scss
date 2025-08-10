@@ -28,7 +28,7 @@
   &__email {
     color: var(--color-primary);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 0.9rem;
     &:hover {
       text-decoration: underline;
     }
@@ -36,7 +36,7 @@
 
   &__back {
     cursor: pointer;
-    font-size: 28px;
+    font-size: 1.8rem;
     color: var(--color-text-primary);
     transition: color 0.2s ease;
     position: absolute;
