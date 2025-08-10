@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { UserInterface } from '../../interfaces/user-interface';
 
 @Component({
@@ -9,4 +9,5 @@ import { UserInterface } from '../../interfaces/user-interface';
 })
 export class UserCard {
   user = input.required<UserInterface>();
+  cardClick = output<void>();
 }

@@ -7,6 +7,9 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { UserCard } from '../../shared/components/user-card/user-card';
 import { UsersService } from '../../shared/services/users-service';
 import { LoadingBar } from '../../shared/components/loading-bar/loading-bar';
+import { Router } from '@angular/router';
+import { UserInterface } from '../../shared/interfaces/user-interface';
+import { generateSlug } from '../../shared/utils/slug';
 
 @Component({
   selector: 'app-users',
@@ -26,6 +29,7 @@ export class Users implements OnInit {
   usersService = inject(UsersService);
   search = new FormControl('');
   searchValue = signal<string>('');
+  private router = inject(Router);
 
   ngOnInit(): void {
     this.usersService.getUsers();
@@ -59,5 +63,10 @@ export class Users implements OnInit {
   onPageChange(event: PageEvent): void {
     const nextPage = event.pageIndex + 1;
     this.usersService.getUsers(nextPage, event.pageSize);
+  }
+
+  navigateToUserDetails(user: UserInterface): void {
+    const fullName = `${user.first_name} ${user.last_name}`;
+    this.router.navigate(['users', generateSlug(fullName, String(user.id))]);
   }
 }

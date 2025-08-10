@@ -6,6 +6,7 @@
   position: sticky;
   top: 0;
   padding: 1rem 5rem;
+  z-index: 2;
 
   @include is-mobile {
     padding: 1rem;

@@ -1,0 +1,38 @@
+<app-loading-bar [loading]="usersService.loading()"></app-loading-bar>
+<section class="user-details">
+  <mat-icon class="user-details__back" (click)="back()" matTooltip="Go back"
+    >arrow_back</mat-icon
+  >
+  @if (usersService.selectedUser()) {
+  <article class="user-details__card">
+    <img
+      class="user-details__avatar"
+      [src]="usersService.selectedUser()!.avatar"
+      [alt]="
+        usersService.selectedUser()!.first_name +
+        ' ' +
+        usersService.selectedUser()!.last_name +
+        ' avatar'
+      "
+      loading="lazy"
+    />
+
+    <h1 class="user-details__name">
+      {{ usersService.selectedUser()!.first_name }}
+      {{ usersService.selectedUser()!.last_name }}
+    </h1>
+
+    <a
+      class="user-details__email"
+      [href]="'mailto:' + usersService.selectedUser()!.email"
+    >
+      {{ usersService.selectedUser()!.email }}
+    </a>
+  </article>
+  } @else {
+  <div class="user-details__not-found">
+    <p>User not found.</p>
+    <a routerLink="/users">Back to list</a>
+  </div>
+  }
+</section>

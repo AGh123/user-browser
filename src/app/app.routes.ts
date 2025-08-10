@@ -11,6 +11,11 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/users/users').then((m) => m.Users),
   },
   {
+    path: 'users/:slug',
+    loadComponent: () =>
+      import('./pages/user-details/user-details').then((m) => m.UserDetails),
+  },
+  {
     path: '**',
     redirectTo: '/users',
   },
